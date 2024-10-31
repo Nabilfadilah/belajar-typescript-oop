@@ -4,6 +4,7 @@ describe('Method Overriding', () => {
         name: string;
 
         constructor(name: string) {
+            // this = memanggil class saat ini
             this.name = name;
         }
 
@@ -15,8 +16,13 @@ describe('Method Overriding', () => {
     class Manager extends Employee {
         // deklarasi ulang (method overriding)
         sayHello(name: string): void {
-            console.info(`Hello ${name}, my name is ${this.name}, I am your manager`)
-            // super.sayHello(name)
+            // method oveeriding
+            // console.info(`Hello ${name}, my name is ${this.name}, I am your manager`)
+            
+            // super = memanggil si parent class nya
+            // .sayHello = memnaggil sayHello milik si parent classnya/Employee
+            super.sayHello(name)
+            console.info(`And, I am your manager`)
         }
     }
 
