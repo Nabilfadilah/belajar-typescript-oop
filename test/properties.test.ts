@@ -8,7 +8,12 @@ describe('Properties', () => {
 
         constructor(id: number, name: string) {
             this.id = id;
-            // this.name = name;
+            this.name = name;
+        }
+
+        // method - video 46
+        sayHello(name: string): void {
+            console.info(`Hello ${name}, my name is ${this.name}`)
         }
     }
 
@@ -22,6 +27,10 @@ describe('Properties', () => {
         console.info(customer.age);
     })
 
-    // properties default value
+    // method - video 46
+    it('should can have methods', () => {
+        const customer = new Customer(1, "Abil")
+        customer.sayHello("Fadilah")
+    })
     
 })
